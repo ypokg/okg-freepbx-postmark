@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Setting variables
-filepath=/tmp/postfix
+filepath=/etc/postfix
 server=$(hostname)
 confLastLine="$(grep "readme_directory = /usr" $filepath/main.cf)"
 emailValidation="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
