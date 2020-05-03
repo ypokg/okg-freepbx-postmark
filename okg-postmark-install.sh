@@ -4,7 +4,7 @@
 filepath=/etc/postfix
 server=$(hostname)
 confLastLine="$(grep "readme_directory = /usr" $filepath/main.cf)"
-emailValidation="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
+emailValidation="^[A-Za-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
 
 #Checking if root user
 if [ "$(id -u)" != "0" ]; then
@@ -30,7 +30,7 @@ fi
 echo "Hi $techName! I am Posty the Robot. Nice to meet you!"
 sleep 3
 
-echo -e "\n$techName, what is your email address? (Don't worry I am not going to share it with anyone, I will use it to send a test email)"
+echo -e "\n$techName, what is YOUR email address? (Don't worry I am not going to share it with anyone, I will use it to send a test email)"
 read techEmail
 
 if [[ $techEmail =~ $emailValidation ]] ; then
