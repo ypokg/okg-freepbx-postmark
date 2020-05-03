@@ -103,7 +103,7 @@ fi
 echo "What is the email server port? [press enter to use the default]"
 read postmarkPort
 if [ "$postmarkPort" = "" ] ; then
-    postmarkServer=587
+    postmarkPort=587
     echo "Hehe! I won't tell anyone ;)"
  else
     echo -e "Alrighy!"
