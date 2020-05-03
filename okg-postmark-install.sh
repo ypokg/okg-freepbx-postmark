@@ -12,7 +12,7 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-echo -e "*************************************************\n**This is is for use by OKG Tech Employees only**\n**     If you are not a OKG Tech employee     **\n**           Please exit this script!!         **\n*************************************************"
+echo -e "\n**This is is for use by OKG Tech Employees only**\n**     If you are not a OKG Tech employee     **\n**           Please exit this script!!         **\n"
 echo -e "\nAlright, Let's do this!"
 sleep 2
 echo -e "Please make sure to enter all information correct, if you made any mistakes, you can start me again."
