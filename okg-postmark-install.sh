@@ -91,7 +91,7 @@ checkPBXEmail(){
 }
 checkPBXEmail
 
-echo "What is the email server? [press enter to use the default]"
+echo "What is the mail server? [press enter to use the default]"
 read postmarkServer
 if [ "$postmarkServer" = "" ] ; then
     postmarkServer="smtp.postmarkapp.com"
@@ -100,7 +100,7 @@ if [ "$postmarkServer" = "" ] ; then
     echo -e "Roger that!"
 fi
 
-echo "What is the email server port? [press enter to use the default]"
+echo "What is the mail server port? [press enter to use the default]"
 read postmarkPort
 if [ "$postmarkPort" = "" ] ; then
     postmarkPort=587
@@ -158,7 +158,7 @@ echo -e "smtp_tls_secure_cert_match = nexthop" >> $filepath/main.cf
 echo -e "smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt" >> $filepath/main.cf
 echo -e "relayhost = $postmarkServer\:$postmarkPort" >> $filepath/main.cf
 
-echo -e "@$server $newEmail" >> $filepath/generic
+echo -e "\n@$server $newEmail" >> $filepath/generic
 
 echo -e "Done! \nOne more step before restarting..."
 
