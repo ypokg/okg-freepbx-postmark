@@ -132,6 +132,7 @@ echo -e "Done! \nRemoving any old config if there are any..."
 
 rm -rf $filepath/main.cf
 rm -rf $filepath/generic
+rm -rf $filepath/sasl_passwd*
 
 yum -y reinstall postfix
 
