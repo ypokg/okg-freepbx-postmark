@@ -179,7 +179,8 @@ echo -e "Did you get an email? (Yy/Nn)"
 read emailDelivered
 
 if [[ "$emailDelivered" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
-    echo "Perfecto Amigo! \nLet's delete the file with the clear text..."
+    echo -e "Perfecto Amigo! \nLet's delete the file with the clear text..."
+    echo -e "Hi $techName \n \nCongratulations! You just installed the new postmark service! \n\n\nDon't tell your pals that you are friends with Posty the Robot. \nThey will think you are insane, Lol. \n\nHave a nice day!" | mail -s"Hooray! it works!" $techEmail
 else
     echo -e "No way! No way!"
     sleep 1
