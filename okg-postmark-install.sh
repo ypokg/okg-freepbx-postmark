@@ -94,7 +94,7 @@ checkPBXEmail
 echo "What is the mail server? [press enter to use the default]"
 read postmarkServer
 if [ "$postmarkServer" = "" ] ; then
-    postmarkServer="smtp.postmarkapp.com"
+    postmarkServer=smtp.postmarkapp.com
     echo "Wonerfull!"
  else
     echo -e "Roger that!"
@@ -156,7 +156,7 @@ echo -e "smtp_tls_mandatory_protocols = TLSv1.2" >> $filepath/main.cf
 echo -e "smtp_tls_mandatory_ciphers = high" >> $filepath/main.cf
 echo -e "smtp_tls_secure_cert_match = nexthop" >> $filepath/main.cf
 echo -e "smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt" >> $filepath/main.cf
-echo -e "relayhost = $postmarkServer\:$postmarkPort" >> $filepath/main.cf
+echo -e "relayhost = $postmarkServer:$postmarkPort" >> $filepath/main.cf
 
 echo -e "\n@$server $newEmail" >> $filepath/generic
 
