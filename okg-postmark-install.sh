@@ -116,6 +116,16 @@ read postmarkUser
 echo "What is the postfix password? (It's usually the same as the username)"
 read postmarkPass
 
+echo -e "Is this version 13 of FreePBX? (Yy/Nn)"
+read pbxVersion
+ if [[ "$pbxVersion" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+      echo "Noted!"
+      tls=TLSv1
+    else
+      echo -e "You got this!"
+      tls=TLSv1.2
+  fi
+
 echo -e "Bingo! Let's get to work..."
 sleep 2
 
@@ -153,7 +163,7 @@ echo -e "smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd" >> $filepath/m
 echo -e "smtp_sasl_security_options = noanonymous" >> $filepath/main.cf
 echo -e "# Secure channel TLS with exact nexthop name match." >> $filepath/main.cf
 echo -e "smtp_tls_security_level = secure" >> $filepath/main.cf
-echo -e "smtp_tls_mandatory_protocols = TLSv1.2" >> $filepath/main.cf
+echo -e "smtp_tls_mandatory_protocols = $tls" >> $filepath/main.cf
 echo -e "smtp_tls_mandatory_ciphers = high" >> $filepath/main.cf
 echo -e "smtp_tls_secure_cert_match = nexthop" >> $filepath/main.cf
 echo -e "smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt" >> $filepath/main.cf
