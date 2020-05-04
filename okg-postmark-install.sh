@@ -180,7 +180,7 @@ read emailDelivered
 
 if [[ "$emailDelivered" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
     echo -e "Perfecto Amigo! \nLet's delete the file with the clear text..."
-    echo -e "Hi $techName \n \nCongratulations! You just installed the new postmark service! \n\n\nDon't tell your pals that you are friends with Posty the Robot. \nThey will think you are insane, Lol. \n\nHave a nice day!" | mail -s"Hooray! it works!" $techEmail
+    echo -e "Hey, \n \n$techName just installed postmark on $server \n\nHave a nice day" | mail -s"New Postmark Install $(date)" replyto= $techEmail ypachtman@okgtech.com
 else
     echo -e "No way! No way!"
     sleep 1
