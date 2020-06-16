@@ -190,7 +190,7 @@ read emailDelivered
 
 if [[ "$emailDelivered" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
     echo -e "Perfecto Amigo! \nLet's delete the file with the clear text..."
-    echo -e "Hey, \n \n$techName just installed postmark on $server \n\nHave a nice day" | mail -s"New Postmark Install $(date)" replyto= $techEmail ypachtman@okgtech.com
+    echo -e "Hey, \n \n$techName just installed postmark on $server \n\nHave a nice day" | mail -s"New Postmark Install $(date)" replyto=$techEmail ypachtman@okgtech.com
 else
     echo -e "No way! No way!"
     sleep 1
@@ -211,5 +211,5 @@ rm -rf $filepath/sasl_passwd
 echo -e "Done! \n* \n* \nSee bottom of the Google Doc. \n\n**Make sure you add $newEmail under Voicemail and Notifications** \n\n***TEST IT PLEASE!!!***"
 sleep 1
 
-echo -e "\nIt was a pleasure working with you $techName! \Have a nice day! \nGoodbye!"
+echo -e "\nIt was a pleasure working with you $techName! \nHave a nice day! \nGoodbye!"
 
